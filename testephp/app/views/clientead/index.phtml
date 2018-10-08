@@ -1,0 +1,29 @@
+	<div style="margin-top:15px;text-align:center;">	
+<form action="clienteaddend" id="formii"  method="post">
+     <table>     
+ 	<tr><th></th><th></th></tr>
+ 	<tr><td>
+    <label for="name">Nome</label></td>
+    <td><input style="margin-top:10px;" type="text" onchange="validate_form()" class="form-control is-invalid" id="cli_nome" name="cli_nome"></td>
+    <tr><td>
+    <label for="email">E-Mail</label></td>
+    <td><input style="margin-top:10px;" type="text" onchange="validate_form()" class="form-control is-invalid" name="cli_email" id="cli_email"></td>
+   <tr><td> 
+          <label >CPF</label></td>
+	 <td>  <input style="margin-top:10px;" type="text" name="cli_cpf" id="cli_cpf" onchange="validate_form()" class="form-control is-invalid">
+	 </td>
+    <tr><td>
+    <label for="telefone">Telefone</label></td>
+    <td><input style="margin-top:10px;" type="text" onchange="validate_form()" class="form-control is-invalid" name="cli_telefone" id="cli_telefone"></td>
+<tr><td>
+    <label for="Data de nascimento">Data de nascimento</label></td>
+    <td><input style="margin-top:10px;" type="date" onchange="validate_form()" class="form-control is-invalid" name="cli_data_nascimento" id="cli_data_nascimento"></td>
+    <tr><td>
+    <label for="Senha">Senha</label></td>
+    <td><input style="margin-top:10px;" type="text" onchange="validate_form()" class="form-control is-invalid" name="cli_senha" id="cli_senha"></td>
+    <tr><td><div style="height:25px;"></td></div></tr>
+</table>
+	 <button class="btn btn-default"  id="formbt" disabled>Cadastrar</button>  
+</form>
+
+</div>

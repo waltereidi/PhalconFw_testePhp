@@ -1,0 +1,98 @@
+	
+<?php foreach ($query_edit as $qed) { ?>
+	<h2>editar Cliente</h2>
+<div style="width:65%;height:400px;">
+	<div style="margin-top:15px;text-align:center;">	
+<form action="edit1" id="formii"  method="post">
+     <table>   
+
+ 	<tr><th></th><th></th></tr>
+ 	<tr><td>
+    <label for="name">Nome</label></td>
+    <td><input style="margin-top:10px;" type="text"  value="<?php echo $qed->cli_nome;?> "  class="form-control is-invalid" id="cli_nome" name="cli_nome"></td>
+
+    <tr><td>
+    <label for="email">E-Mail</label></td>
+    <td><input style="margin-top:10px;" type="text"  value="<?php echo $qed->cli_email;?> "  class="form-control is-invalid" name="cli_email" id="cli_email"></td>
+   <tr><td> 
+          <label >CPF</label></td>
+	 <td>  <input style="margin-top:10px;" type="text" name="cli_cpf" id="cli_cpf" value="<?php echo $qed->cli_cpf;?> "  class="form-control is-invalid">
+	 </td>
+    <tr><td>
+    <label for="telefone">Telefone</label></td>
+    <td><input style="margin-top:10px;" type="text"  value="<?php echo $qed->cli_telefone;?> "  class="form-control is-invalid" name="cli_telefone" id="cli_telefone"></td>
+<tr><td>
+    <label for="Data de nascimento">Data de nascimento</label></td>
+    <td><input style="margin-top:10px;" type="date"  value="<?php echo strftime('%Y-%m-%d',strtotime($qed->cli_data_nascimento)); ?>"  class="form-control is-invalid" name="cli_data_nascimento" id="cli_data_nascimento"></td>
+    <tr><td>
+    <label for="Senha">Senha</label></td>
+    <td><input style="margin-top:10px;" type="text"  value="<?php echo $qed->cli_senha;?> "  class="form-control is-invalid" name="cli_senha" id="cli_senha"></td>
+    <tr><td><div style="height:25px;"></td></div></tr>
+   
+   <input style="margin-top:10px;" type="hidden"  value="<?php echo $qed->cli_id;?>"   id="cli_id" name="cli_id">
+   <input style="margin-top:10px;" type="hidden"  value="<?php echo $qed->cli_data_cadastro;?>"   id="cli_data_cadastro" name="cli_data_cadastro">
+</table>
+	 <button class="btn btn-default"  id="formbt" type="submit" >Editar</button>  
+</form>
+
+</div>
+
+<?php } 
+$i= 1;
+?></div>
+
+
+<div style="width:45%;">
+<details >
+  <summary> <p  class="bg-primary">Criar novo Endereço </p></summary>
+
+
+<form  action="edit2" method="post">
+Endere&ccedil;o N° <?php echo $i; ?>
+<input type="hidden" id="end_id_cliente_fk" name="end_id_cliente_fk" value="<?php echo $qed->cli_id; ?>" >
+<input style="margin-bottom:5px;" name="end_titulo"  	   id="end_titulo" 	   type="text"   class="form-control" placeholder="Titulo">
+<input style="margin-bottom:5px;" name="end_rua"  	  	   id="end_rua" 	  	   type="text"   class="form-control" placeholder="Rua">
+<input style="margin-bottom:5px;" name="end_numero" 	   id="end_numero" 	   type="number" class="form-control" placeholder="N°">
+<input style="margin-bottom:5px;" name="end_complemento"   id="end_complemento" type="text"   class="form-control" placeholder="complemento" >
+<input style="margin-bottom:5px;" name="end_bairro"	       id="end_bairro"	   type="text"   class="form-control" placeholder="Bairro">
+<input style="margin-bottom:5px;" name="end_cidade"	       id="end_cidade"	   type="text"   class="form-control" placeholder="Cidade">
+<input style="margin-bottom:5px;" name="end_estado"	       id="end_estado"	   type="text"   class="form-control" placeholder="Estado">
+
+<div id="btncontainer"></div>
+<br/><br/>
+ <button class="btn btn-default"  id="formbt" >Criar</button>  
+</form>
+
+
+</details>
+</div>
+
+<div style="height:150px;"></div>
+
+
+
+<?php foreach ($query_edit2 as $qed2) { ?>
+
+<div style="width:45%;height:500px;">
+
+<form  action="edit2" method="post">
+Endere&ccedil;o N° <?php echo $i; ?>
+<input type="hidden" id="end_id" name="end_id" value="<?php echo $qed2->end_id; ?>" >
+<input type="hidden" id="end_id_cliente_fk" name="end_id_cliente_fk" value="<?php echo $qed2->end_id_cliente_fk; ?>" >
+<input style="margin-bottom:5px;" name="end_titulo"  	 value="<?php echo $qed2->end_titulo; ?>"  id="end_titulo" 	   type="text"   class="form-control" placeholder="Titulo">
+<input style="margin-bottom:5px;" name="end_rua"  	  	 value="<?php echo $qed2->end_rua; ?>"  id="end_rua" 	  	   type="text"   class="form-control" placeholder="Rua">
+<input style="margin-bottom:5px;" name="end_numero" 	 value="<?php echo $qed2->end_numero; ?>"  id="end_numero" 	   type="number" class="form-control" placeholder="N°">
+<input style="margin-bottom:5px;" name="end_complemento" value="<?php echo $qed2->end_complemento; ?>"  id="end_complemento" type="text"   class="form-control" placeholder="complemento" >
+<input style="margin-bottom:5px;" name="end_bairro"	     value="<?php echo $qed2->end_bairro; ?>"  id="end_bairro"	   type="text"   class="form-control" placeholder="Bairro">
+<input style="margin-bottom:5px;" name="end_cidade"	     value="<?php echo $qed2->end_cidade; ?>"  id="end_cidade"	   type="text"   class="form-control" placeholder="Cidade">
+<input style="margin-bottom:5px;" name="end_estado"	     value="<?php echo $qed2->end_estado; ?>"  id="end_estado"	   type="text"   class="form-control" placeholder="Estado">
+<input style="margin-top:10px;" type="hidden"  value="<?php echo $qed2->end_data_cadastro;?>"   id="end_data_cadastro" name="end_data_cadastro">
+<div id="btncontainer"></div>
+<br/><br/>
+ <button class="btn btn-default"  id="formbt" >Editar</button>  
+</form>
+</div>
+
+<?php
+$i++;
+ } ?>

@@ -1,0 +1,74 @@
+
+
+<input type="hidden" id="mark" data-ctm="">
+
+
+
+<div class="tblay">
+<table class="table" id="tabeladinamica">
+	<tr><button type="button" style="margin-bottom:10px" class="btn btn-success btn" data-toggle="modal" onclick="setframe()"  data-target="#myModal">&nbsp+&nbsp </button> </tr>
+ <tr> <th> Nome </th> <th>cpf</th> <th>telefone</th> <th>email</th> <th>&nbsp</th><th>&nbsp</th> </tr>
+
+
+
+<?php
+// data-toggle="modal" data-target="#myModal" onclick="editConteudo('.$clie->cliente->cli_id.')"
+
+
+foreach ($clistart as $clie) {
+    //echo '_cliente_cli_nome: ', $clie->cliente->cli_id, "\n";
+    echo '
+    <tr onmouseover="showbtn(id)" onmouseout=" hidebtn(id)"  id="'.$clie->cliente->cli_id.'" >
+    <td > '.$clie->cliente->cli_nome.' </td> 
+    <td >'.$clie->cliente->cli_cpf.'</td> 
+    <td >'.$clie->cliente->cli_telefone.'</td> 
+    <td >'.$clie->cliente->cli_email.'</td> 
+    	<td><form action="index/clientedel" id="formii'.$clie->cliente->cli_id.'"  method="post"><input type="hidden" name="iddel" value="'.$clie->cliente->cli_id.'" >
+     <button id="dbtn'.$clie->cliente->cli_id.'"  type="submit" style="display: none;" class="btn btn-danger">X</button> 
+     	</form></td>
+
+     		<td><form action="cliedit/index" id="formee'.$clie->cliente->cli_id.'"  method="post"><input type="hidden" name="idedt" value="'.$clie->cliente->cli_id.'" >
+     <button id="edit'.$clie->cliente->cli_id.'"  type="submit" style="display: none;" class="btn btn-primary">&#9998;</button> 
+     	</form>
+
+     </td></tr>';
+
+
+
+} ?>
+
+
+</table>
+</div>
+<div class="container">
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Cadastrar novo Cliente</h4>
+        </div>
+        <div id="corpo_modal" class="modal-body" >
+        
+    	
+
+
+        	
+
+
+        </div>
+        <div class="modal-footer">
+    	<button class="btn btn-primary"  class="close" data-dismiss="modal"  onclick="location.reload()" >Sair</a>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
+
+	
+</body>
+
+
+</html>
+

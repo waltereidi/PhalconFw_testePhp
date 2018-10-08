@@ -1,0 +1,52 @@
+
+
+<?php 
+if(isset($last_id) ){
+
+foreach ($last_id as $id) {
+$idd = $id->cli_id;
+}
+
+
+if(isset($end_id) ){
+
+foreach ($end_id as $endid) {
+?>
+
+<form  action="updendcad" method="post">
+Endere&ccedil;o N° 
+<input type="hidden" id="end_id_cliente_fk" name="end_id_cliente_fk" value="<?php echo $idd; ?>" >
+<input style="margin-bottom:5px;" name="end_titulo"  	 value="<?php echo $endid->cliente_endereco->end_titulo; ?>"  id="end_titulo" 	   type="text"   class="form-control" placeholder="Titulo">
+<input style="margin-bottom:5px;" name="end_rua"  	  	 value="<?php echo $endid->cliente_endereco->end_rua; ?>"  id="end_rua" 	  	   type="text"   class="form-control" placeholder="Rua">
+<input style="margin-bottom:5px;" name="end_numero" 	 value="<?php echo $endid->cliente_endereco->end_numero; ?>"  id="end_numero" 	   type="number" class="form-control" placeholder="N°">
+<input style="margin-bottom:5px;" name="end_complemento" value="<?php echo $endid->cliente_endereco->end_complemento; ?>"  id="end_complemento" type="text"   class="form-control" placeholder="complemento" >
+<input style="margin-bottom:5px;" name="end_bairro"	     value="<?php echo $endid->cliente_endereco->end_bairro; ?>"  id="end_bairro"	   type="text"   class="form-control" placeholder="Bairro">
+<input style="margin-bottom:5px;" name="end_cidade"	     value="<?php echo $endid->cliente_endereco->end_cidade; ?>"  id="end_cidade"	   type="text"   class="form-control" placeholder="Cidade">
+<input style="margin-bottom:5px;" name="end_estado"	     value="<?php echo $endid->cliente_endereco->end_estado; ?>"  id="end_estado"	   type="text"   class="form-control" placeholder="Estado">
+<div id="btncontainer"></div>
+<br/><br/>
+ <button class="btn btn-default"  id="formbt" disabled>Editar</button>  
+</form>
+
+
+<?php 
+}}else{
+
+?>
+
+<form  action="clienteaddend/addendcad" method="post">
+Endere&ccedil;o N° 
+<input type="hidden" id="end_id_cliente_fk" name="end_id_cliente_fk" value="<?php echo $idd; ?>" >
+<input style="margin-bottom:5px;" name="end_titulo"  	  id="end_titulo" 	   onchange="validate_form2()" type="text"   class="form-control" placeholder="Titulo">
+<input style="margin-bottom:5px;" name="end_rua"  	  	  id="end_rua" 	  	   onchange="validate_form2()" type="text"   class="form-control" placeholder="Rua">
+<input style="margin-bottom:5px;" name="end_numero" 	  id="end_numero" 	   onchange="validate_form2()" type="number" class="form-control" placeholder="N°">
+<input style="margin-bottom:5px;" name="end_complemento"  id="end_complemento" onchange="validate_form2()" type="text"   class="form-control" placeholder="complemento" >
+<input style="margin-bottom:5px;" name="end_bairro"	      id="end_bairro"	   onchange="validate_form2()" type="text"   class="form-control" placeholder="Bairro">
+<input style="margin-bottom:5px;" name="end_cidade"	      id="end_cidade"	   onchange="validate_form2()" type="text"   class="form-control" placeholder="Cidade">
+<input style="margin-bottom:5px;" name="end_estado"	      id="end_estado"	   onchange="validate_form2()" type="text"   class="form-control" placeholder="Estado">
+<div id="btncontainer"></div>
+<br/><br/>
+ <button class="btn btn-default"  id="formbt" >Cadastrar</button>  
+</form>
+
+<?php } }?>
